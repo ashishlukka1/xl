@@ -10,6 +10,10 @@ An intelligent decision-support platform that turns raw customer signals into ra
 | Ashish Lukka | 23071A12G5 | IT |
 | Shaik Afzal Elahi | 23071A12J7 | IT |
 
+GitHub: https://github.com/ashishlukka1/xl
+
+Demo video: https://drive.google.com/file/d/1kftTDJQf-aGP25U32gRxDirTpiZgq0Z3/view?usp=sharing
+
 ---
 
 ## Project Overview
