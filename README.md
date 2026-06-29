@@ -2,9 +2,17 @@
 
 An intelligent decision-support platform that turns raw customer signals into ranked, evidence-backed actions — built to show how any team managing ongoing client relationships can stop guessing and start acting with confidence.
 
+## Team Details
+
+| Name | Roll Number | Department |
+|---|---|---|
+| Abhinav Cheruku | 23071A12E2 | IT |
+| Ashish Lukka | 23071A12G5 | IT |
+| Shaik Afzal Elahi | 23071A12J7 | IT |
+
 ---
 
-## What it does
+## Project Overview
 
 Managing client relationships means constantly juggling noisy data — usage drops, open tickets, negative meeting sentiment, stakeholder changes. Most teams either miss signals or react too late.
 
