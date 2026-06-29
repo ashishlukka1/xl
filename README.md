@@ -1,4 +1,4 @@
-# Velocis — Know What to Do Next, Every Time
+# Know What to Do Next, Every Time
 
 An intelligent decision-support platform that turns raw customer signals into ranked, evidence-backed actions — built to show how any team managing ongoing client relationships can stop guessing and start acting with confidence.
 
