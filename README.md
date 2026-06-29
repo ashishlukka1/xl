@@ -18,7 +18,7 @@ Managing client relationships means constantly juggling noisy data — usage dro
 
 **For the purpose of this demonstration, we use a Customer Success Manager (CSM) at a B2B SaaS company as the example role.** The CSM manages a portfolio of enterprise clients and needs to know which accounts need attention, what action to take, and why.
 
-Velocis ingests raw customer events, extracts structured evidence claims using an LLM, matches those claims against deterministic playbook rules, and drafts ranked recommendations for the CSM to approve, edit, or reject. Every decision is stored and used to calibrate confidence scores on future runs. The same pattern applies to any role that needs to act on incoming signals — sales, support, account management, or operations.
+It ingests raw customer events, extracts structured evidence claims using an LLM, matches those claims against deterministic playbook rules, and drafts ranked recommendations for the CSM to approve, edit, or reject. Every decision is stored and used to calibrate confidence scores on future runs. The same pattern applies to any role that needs to act on incoming signals — sales, support, account management, or operations.
 
 ---
 
