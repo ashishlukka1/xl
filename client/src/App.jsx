@@ -48,7 +48,7 @@ function App() {
     return (
       <div className="loading-screen">
         <div className="loading-spinner" />
-        <p>Loading workspace…</p>
+        <p>Loading workspace...</p>
       </div>
     )
   }
@@ -57,33 +57,139 @@ function App() {
     return (
       <div className="landing">
         <nav className="landing-nav">
-          <span className="brand">Velocis NBA</span>
-          <button className="btn-outline" onClick={() => { setAuthMode('login'); setScreen('login') }}>Sign In</button>
+          <span className="brand">NBA Platform</span>
+          <div className="landing-nav-actions">
+            <button className="btn-outline" onClick={() => { setAuthMode('login'); setScreen('login') }}>Sign In</button>
+            <button className="btn-primary" onClick={() => { setAuthMode('register'); setScreen('login') }}>Start Free</button>
+          </div>
         </nav>
-        <main className="landing-hero">
-          <div className="hero-text">
-            <p className="hero-eyebrow">Customer Success Intelligence</p>
-            <h1>Next Best Actions, backed by evidence.</h1>
-            <p className="hero-sub">
-              Raw product signals, support tickets, and meeting notes become ranked, auditable
-              recommendations — with memory-backed confidence calibration.
-            </p>
-            <div className="hero-btns">
-              <button className="btn-primary" onClick={() => { setAuthMode('login'); setScreen('login') }}>Enter Workspace</button>
-              <button className="btn-outline" onClick={() => { setAuthMode('register'); setScreen('login') }}>Create Account</button>
+
+        <main className="landing-main">
+          <section className="landing-hero">
+            <div className="hero-text">
+              <p className="hero-eyebrow">Customer Success Intelligence</p>
+              <h1>Next best actions with the audit trail your team actually trusts.</h1>
+              <p className="hero-sub">
+                Velocis turns usage shifts, support pain, CRM notes, and meeting sentiment into
+                ranked customer actions your CSMs can review fast and explain clearly.
+              </p>
+              <div className="hero-btns">
+                <button className="btn-primary" onClick={() => { setAuthMode('login'); setScreen('login') }}>Enter Workspace</button>
+                <button className="btn-outline" onClick={() => { setAuthMode('register'); setScreen('login') }}>Create Account</button>
+              </div>
+              <div className="hero-metrics">
+                <div className="hero-metric">
+                  <strong>6</strong>
+                  <span>signal streams unified</span>
+                </div>
+                <div className="hero-metric">
+                  <strong>100%</strong>
+                  <span>playbook-visible reasoning</span>
+                </div>
+                <div className="hero-metric">
+                  <strong>1 view</strong>
+                  <span>from event log to action</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="hero-card">
-            <p className="card-eyebrow">How it works</p>
-            <ol className="flow-list">
-              <li><span className="step-num">1</span>Raw events land as timestamped records</li>
-              <li><span className="step-num">2</span>Signal agent extracts tagged evidence claims</li>
-              <li><span className="step-num">3</span>Playbook engine matches claims to rules</li>
-              <li><span className="step-num">4</span>Recommendation agent drafts ranked actions</li>
-              <li><span className="step-num">5</span>CSM approves, edits, or rejects each one</li>
-              <li><span className="step-num">6</span>Decisions feed memory for future calibration</li>
+
+            <div className="hero-stack">
+              <div className="hero-console">
+                <div className="hero-console-top">
+                  <span className="card-eyebrow">Live signal stream</span>
+                  <span className="hero-console-chip">Account: Northstar Bio</span>
+                </div>
+                <div className="hero-console-lines">
+                  <div className="hero-console-line">
+                    <span className="hero-console-time">09:14</span>
+                    <span className="hero-console-event">usage_snapshot</span>
+                    <span className="hero-console-copy">active seats dropped 24% week-over-week</span>
+                  </div>
+                  <div className="hero-console-line">
+                    <span className="hero-console-time">09:18</span>
+                    <span className="hero-console-event">support_ticket</span>
+                    <span className="hero-console-copy">priority high, dashboard export blocked</span>
+                  </div>
+                  <div className="hero-console-line">
+                    <span className="hero-console-time">09:24</span>
+                    <span className="hero-console-event">meeting_note</span>
+                    <span className="hero-console-copy">champion raised renewal risk before QBR</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hero-card hero-card-floating">
+                <div className="hero-card-head">
+                  <p className="card-eyebrow">Planner output</p>
+                  <span className="status-pill pending">Awaiting review</span>
+                </div>
+                <h3>Escalate with a tailored adoption recovery plan this week.</h3>
+                <p>
+                  Confidence rose after repeated low-usage and support-friction claims matched the
+                  renewal-risk playbook.
+                </p>
+                <div className="hero-card-tags">
+                  <span className="tag-chip">usage_drop</span>
+                  <span className="tag-chip">open_ticket</span>
+                  <span className="tag-chip">negative_sentiment</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section className="landing-band">
+            <div className="landing-band-copy">
+              <p className="section-eyebrow">Why teams use it</p>
+              <h2>Designed for human review, not black-box automation.</h2>
+            </div>
+            <div className="feature-grid">
+              <article className="feature-card">
+                <span className="feature-kicker">Signals</span>
+                <h3>Every raw event stays visible</h3>
+                <p>CSMs can inspect source logs, timestamps, and payloads before acting on any recommendation.</p>
+              </article>
+              <article className="feature-card">
+                <span className="feature-kicker">Rules</span>
+                <h3>Playbooks stay deterministic</h3>
+                <p>Matching is auditable and consistent, so teams know exactly why a guidance path fired.</p>
+              </article>
+              <article className="feature-card">
+                <span className="feature-kicker">Memory</span>
+                <h3>Feedback improves confidence</h3>
+                <p>Approvals and rejections feed calibration, helping future suggestions land closer to reality.</p>
+              </article>
+            </div>
+          </section>
+
+          <section className="landing-process">
+            <div className="process-copy">
+              <p className="section-eyebrow">Operating model</p>
+              <h2>A sharper loop from signal to decision.</h2>
+              <p className="process-sub">
+                The interface is built to move from raw evidence to action without losing the thread in between.
+              </p>
+            </div>
+            <ol className="flow-list flow-list-modern">
+              <li><span className="step-num">1</span>Raw events land as timestamped records across product, support, CRM, and notes.</li>
+              <li><span className="step-num">2</span>Signal extraction converts those records into tagged evidence claims.</li>
+              <li><span className="step-num">3</span>Playbooks evaluate the claims and trigger deterministic guidance.</li>
+              <li><span className="step-num">4</span>Recommendations are ranked, reviewed, edited if needed, and approved by the CSM.</li>
             </ol>
-          </div>
+          </section>
+
+          <section className="landing-cta">
+            <div>
+              <p className="section-eyebrow">Ready to try it</p>
+              <h2>Bring your customer signals into one calm workspace.</h2>
+              <p className="cta-copy">
+                Keep the same evidence-first approach your team already trusts, with a faster path to next steps.
+              </p>
+            </div>
+            <div className="hero-btns">
+              <button className="btn-primary" onClick={() => { setAuthMode('register'); setScreen('login') }}>Create Account</button>
+              <button className="btn-outline" onClick={() => { setAuthMode('login'); setScreen('login') }}>Sign In</button>
+            </div>
+          </section>
         </main>
       </div>
     )
@@ -102,7 +208,7 @@ function App() {
             <label>Email<input type="email" value={authForm.email} onChange={(e) => setAuthForm({ ...authForm, email: e.target.value })} placeholder="you@company.com" required /></label>
             <label>Password<input type="password" value={authForm.password} onChange={(e) => setAuthForm({ ...authForm, password: e.target.value })} placeholder="Min. 8 characters" minLength={8} required /></label>
             <button className="btn-primary" type="submit" disabled={auth.isBusy}>
-              {auth.isBusy ? 'Working…' : authMode === 'login' ? 'Sign In' : 'Register'}
+              {auth.isBusy ? 'Working...' : authMode === 'login' ? 'Sign In' : 'Register'}
             </button>
           </form>
           <button className="text-link" onClick={() => setAuthForm({ name: '', email: '', password: '' }) || setAuthMode(authMode === 'login' ? 'register' : 'login')}>

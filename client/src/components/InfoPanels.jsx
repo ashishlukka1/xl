@@ -1,5 +1,14 @@
 import { formatDate, titleCase, confidenceLabel } from '../utils'
 
+function formatLogPreview(data) {
+  if (!data || typeof data !== 'object') return 'No payload'
+
+  return Object.entries(data)
+    .slice(0, 3)
+    .map(([key, value]) => `${key}=${typeof value === 'string' ? value : JSON.stringify(value)}`)
+    .join('  ')
+}
+
 export function RunHistory({ runs }) {
   if (!runs?.length) return <p className="empty-state">No runs yet for this account.</p>
   return (
@@ -22,18 +31,24 @@ export function RunHistory({ runs }) {
 export function EventFeed({ events }) {
   if (!events?.length) return <p className="empty-state">No raw events logged yet.</p>
   return (
-    <div className="timeline-list">
-      {events.map((event) => (
-        <div key={event._id} className="timeline-card">
-          <div className="timeline-top">
-            <span className="timeline-label">{event.event_type}</span>
-            <span className={`status-pill ${event.processed ? 'processed' : 'pending'}`}>
-              {event.processed ? 'Processed' : 'Pending'}
-            </span>
+    <div className="event-log-list">
+      {events.map((event, index) => (
+        <article key={event._id} className="event-log-entry">
+          <div className="event-log-gutter">
+            <span className="event-log-line">{String(index + 1).padStart(3, '0')}</span>
+            <span className="event-log-time">{formatDate(event.event_timestamp, true)}</span>
           </div>
-          <small>{formatDate(event.event_timestamp, true)}</small>
-          <pre className="data-preview">{JSON.stringify(event.data, null, 2)}</pre>
-        </div>
+          <div className="event-log-body">
+            <div className="event-log-top">
+              <span className="event-log-type">{event.event_type}</span>
+              <span className={`status-pill ${event.processed ? 'processed' : 'pending'}`}>
+                {event.processed ? 'Processed' : 'Pending'}
+              </span>
+            </div>
+            <p className="event-log-preview">{formatLogPreview(event.data)}</p>
+            <pre className="event-log-data">{JSON.stringify(event.data, null, 2)}</pre>
+          </div>
+        </article>
       ))}
     </div>
   )
@@ -59,17 +74,7 @@ export function MemoryOutcomes({ outcomes }) {
 export function PlaybookLibrary({ playbooks }) {
   return (
     <>
-      <div className="playbook-explainer">
-        <h4>What is a Playbook?</h4>
-        <p>
-          Playbooks are deterministic rules that map customer signals to recommended actions.
-          When the signal extraction agent produces claims (e.g. <em>usage_drop</em>, <em>unresolved_ticket</em>),
-          the playbook engine checks each playbook's conditions against those claims.
-          If all conditions are met, that playbook fires and its guidance is passed to the
-          recommendation agent to draft a specific, ranked action for the CSM.
-          No AI is involved in matching — every trigger is fully auditable.
-        </p>
-      </div>
+      
       {!playbooks?.length
         ? <p className="empty-state">No playbooks found.</p>
         : (

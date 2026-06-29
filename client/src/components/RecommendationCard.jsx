@@ -52,7 +52,6 @@ export default function RecommendationCard({ recommendation, onDecision, isBusy 
           />
           <div className="hitl-actions">
             <button className="btn-approve" onClick={() => onDecision(recommendation._id, 'approved', draft)} disabled={isBusy}>Approve</button>
-            <button className="btn-edit" onClick={() => onDecision(recommendation._id, 'edited', draft)} disabled={isBusy}>Save Edit</button>
             <button className="btn-reject" onClick={() => onDecision(recommendation._id, 'rejected', draft)} disabled={isBusy}>Reject</button>
           </div>
         </>
